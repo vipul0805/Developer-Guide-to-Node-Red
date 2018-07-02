@@ -1,0 +1,35 @@
+<script type="text/javascript">
+RED.nodes.registerType('operation',{
+    category:'function',
+    color:'#E6E0F8',
+    icon:"arrow-in.png",
+    inputs:1,
+    outputs:1,
+    defaults:{
+      name:{value:""},
+      operation:{value:"floor"}
+    },
+    label:function(){
+      return this.name||"operation";
+    }
+});
+</script>
+
+<script type="text/x-red" data-template-name="operation">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i>Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-operation"><i class="fa fa-tasks"></i>operation</label>
+        <select id="node-input-operation">
+          <option value="floor">floor</option>
+          <option value="round">round</option>
+          <option value="sqrt">sqrt</option>
+    </div>
+    </script>
+
+  <script type="text/x-red" data-help-name="operation">
+      <p>Converts msg.payload to the output depending on the type of operation performed</p>
+  </script>
